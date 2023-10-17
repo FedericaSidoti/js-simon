@@ -3,7 +3,14 @@
 //- stampare in un alert i 5 numeri
 const fiveNumbersArray = getFiveNumbers(1, 50, 5)
 //console.log(fiveNumbers)
-alert(`Ricorda questi 5 numeri: ${fiveNumbersArray}`)
+let score = 0 ; 
+const scoreDomElement = document.querySelector('.score')
+console.log(scoreDomElement)
+const arraymemory = []
+
+
+setTimeout(myAlert(fiveNumbersArray), 2000)
+
 //- setTimeOut a 30 secondi, dopo di che FUNZIONE
 setTimeout(memoryGame, 3000)
 
@@ -28,10 +35,26 @@ function getFiveNumbers(minRange, maxRange, numberOfNumbers) {
 function memoryGame () {
     //    - ciclo for da 5 iterazioni che stampa un prompt
     for(let i = 0; i < 5; i++) {
-        prompt('inserisci qui un numero che ti ricordi')
+        let memoryRequest = prompt('inserisci qui un numero che ti ricordi')
+        console.log(memoryRequest)
+//    - PER OGNI prompt recuperare il valore e confrontarlo con l'array di numeri 
+        const currentMemoryNumber = parseInt(memoryRequest)
+        
+        //    - SE è presente
+        //        - allora aumenta il punteggio di 1 
+        if (fiveNumbersArray.includes(currentMemoryNumber) && !arraymemory.includes(currentMemoryNumber)) {
+            arraymemory.push(currentMemoryNumber)
+            score ++
+            console.log(score)
+            const scoreContent = `Hai ricordato ${score} numeri : ${arraymemory}`; 
+            scoreDomElement.innerHTML = scoreContent
+        }
+
     }
 }
 
-//    - PER OGNI prompt recuperare il valore e confrontarlo con l'array di numeri 
-//    - SE è presente
-//        - allora aumenta il punteggio di 1 
+function myAlert (array) {
+    alert(`Ricorda questi 5 numeri: ${array}`)
+}
+
+
