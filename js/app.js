@@ -48,6 +48,8 @@ function memoryGame () {
             console.log(score)
             const scoreContent = `Hai ricordato ${score} numeri : ${arraymemory}`; 
             scoreDomElement.innerHTML = scoreContent
+        } else if (score === 0) {
+            scoreDomElement.innerHTML = 'Non hai ricordato nessun numero'
         }
 
     }
