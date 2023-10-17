@@ -1,12 +1,11 @@
 //- creare la funzione per creare 5 numeri casuali
 
 //- stampare in un alert i 5 numeri
-const numberMemory = 5
-const fiveNumbersArray = getFiveNumbers(1, 50, numberMemory)
+const fiveNumbersArray = getFiveNumbers(1, 50, 5)
 //console.log(fiveNumbers)
 alert(`Ricorda questi 5 numeri: ${fiveNumbersArray}`)
 //- setTimeOut a 30 secondi, dopo di che FUNZIONE
-
+setTimeout(memoryGame, 3000)
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -26,9 +25,9 @@ function getFiveNumbers(minRange, maxRange, numberOfNumbers) {
     return arrayNumbers;
 }
 
-function memoryGame (numberOfMemoryNumbers) {
+function memoryGame () {
     //    - ciclo for da 5 iterazioni che stampa un prompt
-    for(let i = 0; i < numberOfMemoryNumbers; i++) {
+    for(let i = 0; i < 5; i++) {
         prompt('inserisci qui un numero che ti ricordi')
     }
 }
