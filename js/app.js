@@ -12,7 +12,7 @@ const arraymemory = []
 setTimeout(myAlert(fiveNumbersArray), 2000)
 
 //- setTimeOut a 30 secondi, dopo di che FUNZIONE
-setTimeout(memoryGame, 3000)
+setTimeout(memoryGame, 30000)
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
